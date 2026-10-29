@@ -17,6 +17,7 @@ export type BuildReview = {
 };
 export type BuildCard = {
   name: string; initiative: string; augment?: boolean; topLost?: boolean; bottomLost?: boolean;
+  level?:string;
   simulationModel?:SimSpec;
   buildReview?: BuildReview;
   actionIndex?: { top: BuildAction; bottom: BuildAction };

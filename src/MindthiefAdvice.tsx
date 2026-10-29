@@ -30,6 +30,6 @@ export default function MindthiefAdvice({equipment=[],journalNotes,style,seconda
     {cards.length===10 ? swaps.length ? <div className="swap-list quick-swap-grid">{swaps.map(s => <article className="swap-card" key={`${s.out.name}-${s.into.name}`}><div><span className="field-label">REPLACE</span><strong>{title(s.out.name)}</strong><span aria-hidden="true"> → </span>{inspect(s.into)}</div><SwapRationale explanation={s.explanation}/>{onSwap && <button className="scenario-button" onClick={() => onSwap(s.out,s.into)}>APPLY SWAP</button>}</article>)}</div> : <p>Your hand already fits this playstyle well under the current card ratings. Try another style to compare alternatives.</p> : <p>Choose ten cards or use the recommended hand below to start. Swaps appear once the hand is complete.</p>}
     
     {showHand && <ol className="recommended-hand">{best.map(c => <li key={c.name}>{inspect(c)}{secondaryStyle?<ul>{hybridCardReason(c,best,style,secondaryStyle,perkSelections).map((why,i)=><li key={i}>{why}</li>)}</ul>:<p>{cardReason(c,style)}</p>}</li>)}</ol>}
-    <p className="guide-footnote">Suggestions use reviewed effects and playstyle fit, not simulated fight outcomes. Level-eligible cards are assumed available. Save the draft when ready.</p>
+    <p className="guide-footnote">Suggestions use cards available at this character level. Review the hand and save when ready.</p>
   </section>;
 }

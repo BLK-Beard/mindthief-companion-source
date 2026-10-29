@@ -2,6 +2,7 @@
   "name": "gloomhaven-deck-companion",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.25.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

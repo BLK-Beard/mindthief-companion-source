@@ -80,8 +80,16 @@ function moveActor(s:State,actor:Actor,amount:number,retreat=false,jump=false){
 }
 function enabled(s:State,element:'Ice'|'Dark',mask:number){return !!(mask&(element==='Ice'?1:2))&&s.elements[element]>0;}
 function claimItem(s:State,model:ItemModel,instruction:string):boolean{const i=s.items.find(i=>i.model===model&&i.status==='ready'&&!i.back&&s.itemRequests.includes(i.id));if(!i)return false;i.status=i.lost?'lost':i.spent?'spent':'ready';s.itemRequests=s.itemRequests.filter(id=>id!==i.id);s.itemUses.push({id:i.id,name:i.name,instruction});return true;}
-function turnItems(s:State,play:Play){
+function turnItems(s:State,play:Play,cards:SimCard[]){
  for(const [model,amount] of [['heal1',1],['heal3',3],['heal6',6]] as const)if(s.status.Stun===undefined&&s.hp<s.maxHp&&(amount===1||s.maxHp-s.hp>=amount||s.hp<=Math.max(2,Math.floor(s.maxHp/4)))&&claimItem(s,model,'During your turn, after start-of-turn effects: Heal '+amount+' Self.'))s.hp=heal(s.status,s.hp,s.maxHp,amount);
+ if(live(s).some(e=>Math.abs(e.pos-s.pos)<=1)&&claimItem(s,'poisonArea','During your turn: apply Poison to all enemies within Range 1.'))for(const enemy of live(s).filter(e=>Math.abs(e.pos-s.pos)<=1))addCondition(s,enemy,'Poison');
+ for(const [model,name,hp,move,attack] of [['summonSkeleton','Skeleton',3,2,2],['summonWarrior','Warrior Spirit',6,1,2],['summonConstruct','Steel Construct',5,2,3]] as const){
+  if(claimItem(s,model,`During your turn: Summon ${name} (Health ${hp}, Move ${move}, Attack ${attack}).`)){
+   s.rats.push({name,hp,maxHp:hp,move,attack,pos:s.pos,source:-1,born:s.round,status:{}});s.notes.push(`Summon ${name} from equipped item`);
+  }
+ }
+ const recoverable=s.zones.findIndex((zone,index)=>zone==='discard'&&Number.parseInt(cards[index]?.level??'',10)===1);
+ if(recoverable>=0&&claimItem(s,'recoverLevel1','During your turn: recover one level 1 card from your discard pile.')){s.zones[recoverable]='hand';s.notes.push(`Recover ${cards[recoverable].name} with Stamina Potion`);}
  if(play.itemElement&&s.elements[play.itemElement]<2&&!s.pending[play.itemElement]&&claimItem(s,'element','During your turn: infuse '+play.itemElement+'; available after this turn, not for this turn’s abilities.'))s.pending[play.itemElement]=true;
 }
 function runAttack(s:State,effect:Extract<Effect,{kind:'attack'}>,ctx:Context){
@@ -103,9 +111,14 @@ function runAttack(s:State,effect:Extract<Effect,{kind:'attack'}>,ctx:Context){
  for(const target of chosen){
   const targetConditions=[...conditions];
   let itemPierce=0;
-  if(player&&target.shield>(effect.pierce??0)&&claimItem(s,'pierce1','Before drawing the modifier for your attack: add Pierce 1.'))itemPierce=1;
+  if(player&&target.shield>(effect.pierce??0)){
+   if(claimItem(s,'pierce3','Before drawing the modifier for your attack: add Pierce 3.'))itemPierce=3;
+   else if(claimItem(s,'pierce1','Before drawing the modifier for your attack: add Pierce 1.'))itemPierce=1;
+  }
   if(player&&melee&&target.status.Wound===undefined&&claimItem(s,'wound','Before drawing the modifier for one of your melee attacks: add Wound.'))targetConditions.push('Wound');
   if(player&&melee&&claimItem(s,'curse','Before drawing the modifier for one of your melee attacks: add Curse.'))targetConditions.push('Curse');
+  if(player&&melee&&target.status.Poison===undefined&&claimItem(s,'poison','Before drawing the modifier for one of your melee attacks: add Poison.'))targetConditions.push('Poison');
+  const summonItemAdvantage=actor.kind==='rat'&&claimItem(s,'summonFilter','Before one of your summon’s attacks: filter its modifier draw using Ranger’s Hood.')?1:0;
   if(player&&melee&&s.charges>0){targetConditions.push('Stun','Curse');s.charges--;}
   ctx.last=target.id;
   let conditionPower=(effect.perCondition??0)*negatives(target.status);
@@ -115,7 +128,7 @@ function runAttack(s:State,effect:Extract<Effect,{kind:'attack'}>,ctx:Context){
   if(rat?.conditional&&negatives(target.status)){power++;conditionPower++;}
   if(target.status.Poison!==undefined){power++;conditionPower++;}
   const status=player?s.status:rat?.status??enemy?.status??{};
-  const adv=Number(effect.advantage||status.Strengthen!==undefined)-Number(status.Muddle!==undefined||(!melee&&Math.abs(target.pos-actorPos(s,actor))<=1));
+  const adv=Number(effect.advantage||status.Strengthen!==undefined)+summonItemAdvantage-Number(status.Muddle!==undefined||(!melee&&Math.abs(target.pos-actorPos(s,actor))<=1));
   const useOwnForControl=!!enemy&&perkCount(s.perks,'controlDeck')>0&&drawResult(s,false,power,adv,false,negatives(target.status)).damage>=drawResult(s,true,power,adv,false,negatives(target.status)).damage;
   const drawn=actor.kind==='ally'?{damage:Math.max(0,power),effects:[],conditionalBonus:0}:drawResult(s,!!enemy&&!useOwnForControl,Math.max(0,power),adv,ctx.sample,negatives(target.status));
   const raw=drawn.damage;conditionPower+=drawn.conditionalBonus??0;
@@ -205,7 +218,10 @@ function monsterTurns(s:State,sample:boolean){for(const e of live(s)){
    potential.sort((a,b)=>Math.abs(a.pos-e.pos)-Math.abs(b.pos-e.pos)||focusInitiative(a)-focusInitiative(b));
    const t=potential[0];if(t){const oldPos=e.pos;if(e.status.Immobilize===undefined)e.pos+=Math.sign(t.pos-e.pos)*Math.min(e.move,Math.max(0,Math.abs(t.pos-e.pos)-e.range));if(e.pos!==oldPos)s.notes.push(`Automatic enemy turn: enemy ${e.id+1} moves ${Math.abs(e.pos-oldPos)} toward its focus.`);
     if(Math.abs(t.pos-e.pos)<=e.range&&e.status.Disarm===undefined){const targetStatus=t.kind==='player'?s.status:t.kind==='rat'?s.rats[t.index].status:{};const power=e.attack+Number(targetStatus.Poison!==undefined);const amount=draw(s,true,power,Number(e.status.Strengthen!==undefined)-Number(e.status.Muddle!==undefined),sample);
-     if(t.kind==='player')hurtPlayer(s,amount);else if(t.kind==='rat')s.rats[t.index].hp=Math.max(0,s.rats[t.index].hp-amount);else s.allies[t.index].hp=Math.max(0,s.allies[t.index].hp-amount);
+     if(t.kind==='player')hurtPlayer(s,amount);else if(t.kind==='rat'){
+      const warded=claimItem(s,'summonShield',"When your summon suffers an attack: gain Shield 2 for that attack.");
+      s.rats[t.index].hp=Math.max(0,s.rats[t.index].hp-Math.max(0,amount-(warded?2:0)));
+     }else s.allies[t.index].hp=Math.max(0,s.allies[t.index].hp-amount);
     }
    }
   }
@@ -243,9 +259,9 @@ export function step(s0:State,cards:SimCard[],config:Config,play:Play,sample:boo
    summonTurns(s,sample);
    if(s.items.some(i=>i.model==='immunities')){delete s.status.Disarm;delete s.status.Stun;delete s.status.Muddle;}
    if(s.status.Wound!==undefined)hurtPlayer(s,1);if(s.hp<=0)break;
-   if(play.rest!==undefined){rest(s,play,sample);turnItems(s,play);}
+   if(play.rest!==undefined){rest(s,play,sample);turnItems(s,play,cards);}
    else{
-    turnItems(s,play);
+    turnItems(s,play,cards);
     const sequence:('top'|'bottom')[]=play.bottomFirst?['bottom','top']:['top','bottom'];
     const ctx:Context={last:-1,controlled:[],mask:play.consumeMask,retreat:play.retreat,sample,actor:{kind:'player'},allowSharing:false};
     for(const side of sequence){const index=side==='top'?play.top:play.bottom;let half=halfFor(cards[index],side,side==='top'?play.topDefault:play.bottomDefault);

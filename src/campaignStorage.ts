@@ -7,6 +7,7 @@ let status:SaveStatus={phase:'saving',savedAt:0,message:'Loading saved campaignâ
 const listeners=new Set<()=>void>(),values=new Map<string,string>();
 const entries:Record<string,Entry>={},dirty=new Map<string,Entry>();
 let timer:ReturnType<typeof setTimeout>|undefined,inFlight:Promise<void>|undefined,serverAvailable=false;
+const diskPersistenceAvailable=typeof window!=='undefined'&&['127.0.0.1','localhost'].includes(window.location.hostname);
 function publish(next:SaveStatus){status=next;listeners.forEach(f=>f());}
 function localWrite(key:string,value:string|null){try{if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,value);}catch{/* Disk saving remains available. */}}
 function remember(snapshot:Snapshot){for(const [key,entry] of Object.entries(snapshot.entries)){if(!key.startsWith(prefix))continue;if(!entries[key]||entry.updatedAt>=entries[key].updatedAt){entries[key]=entry;if(entry.value===null)values.delete(key);else values.set(key,entry.value);localWrite(key,entry.value);}}localWrite(stampsKey,JSON.stringify(Object.fromEntries(Object.entries(entries).map(([k,e])=>[k,e.updatedAt]))));}
@@ -25,6 +26,7 @@ export async function flushCampaign():Promise<void>{
 }
 export async function initializeCampaignStorage(){
  let stamps:Record<string,number>={};try{stamps=JSON.parse(localStorage.getItem(stampsKey)??'{}');for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i)!;if(key.startsWith(prefix)){const value=localStorage.getItem(key)!;values.set(key,value);entries[key]={value,updatedAt:stamps[key]??0};}}}catch{}
+ if(!diskPersistenceAvailable){publish({phase:'browser-only',savedAt:0,message:'Saved on this device'});return;}
  try{const response=await fetch('/api/campaign',{signal:AbortSignal.timeout(3000)});if(!response.ok)throw new Error('Save service unavailable');const snapshot:Snapshot=await response.json();for(const [key,entry] of Object.entries(entries)){const saved=snapshot.entries[key];if(!saved||entry.updatedAt>saved.updatedAt&&entry.value!==saved.value)dirty.set(key,entry);}remember(snapshot);serverAvailable=true;publish({phase:'saved',savedAt:Date.now(),message:'Saved on this computer'});if(dirty.size)await flushCampaign();}catch{publish({phase:'browser-only',savedAt:0,message:'Saved in this browser; computer backup unavailable'});}
  window.addEventListener('pagehide',()=>{if(dirty.size)void flushCampaign();});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&dirty.size)void flushCampaign();});
@@ -33,6 +35,7 @@ function update(key:string,value:string|null){
  if((values.get(key)??null)===value)return;
  if(value===null)values.delete(key);else values.set(key,value);
  const entry={value,updatedAt:Math.max(Date.now(),(entries[key]?.updatedAt??0)+1)};entries[key]=entry;dirty.set(key,entry);localWrite(key,value);localWrite(stampsKey,JSON.stringify(Object.fromEntries(Object.entries(entries).map(([k,e])=>[k,e.updatedAt]))));
+ if(!diskPersistenceAvailable){publish({phase:'browser-only',savedAt:0,message:'Saved on this device'});return;}
  publish({phase:'saving',savedAt:status.savedAt,message:'Savingâ€¦'});if(timer)clearTimeout(timer);timer=setTimeout(()=>{void flushCampaign();},1200);
 }
 export const campaignStorage={getItem:(key:string)=>values.get(key)??null,setItem:(key:string,value:string)=>update(key,value),removeItem:(key:string)=>update(key,null)};

@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "Gloomhaven Deck Companion",
+  "short_name": "GH Companion",
+  "description": "An offline friendly Gloomhaven Second Edition companion.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#160d22",
+  "theme_color": "#211332",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
