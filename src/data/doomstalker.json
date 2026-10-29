@@ -1,0 +1,3701 @@
+{
+  "character": {
+    "id": "DS2",
+    "game": "gh2",
+    "colour": "#3D7584",
+    "name": "Doomstalker",
+    "altName": "Angry Face",
+    "noBackMat": true,
+    "portrait": "character-mats/gloomhaven-2nd-edition/gh2-doomstalker.jpeg",
+    "classIcon": "icons/characters/gh2/DS2.png",
+    "perkSheet": "character-perks/gloomhaven-2nd-edition/gh2-doomstalker-perks.jpeg",
+    "handSize": 11,
+    "backgroundImage": "/character-art/doomstalker-background.jpg",
+    "classNotesImage": "/character-art/doomstalker-notes.jpg",
+    "experienceThresholds": [
+      0,
+      45,
+      95,
+      150,
+      210,
+      275,
+      345,
+      420,
+      500
+    ],
+    "maxHealthByLevel": [
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      17,
+      18,
+      20
+    ]
+  },
+  "abilityCards": [
+    {
+      "name": "rain of arrows",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/rain-of-arrows.jpeg",
+      "level": "1",
+      "initiative": "9",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": null,
+          "otherEffects": [
+            "Apply Doom; conditional Attack 3 after an enemy with Doom dies while another enemy is within range 4"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Apply Doom; conditional Attack 3 after an enemy with Doom dies while another enemy is within range 4",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Apply Doom; conditional Attack 3 after an enemy with Doom dies while another enemy is within range 4"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "race to the grave",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/race-to-the-grave.jpeg",
+      "level": "1",
+      "initiative": "75",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": [
+            "Summon Vicious Jackal"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": [
+            "Doomed enemy suffers 1 damage at the start of each of its turns"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Summon Vicious Jackal",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Summon Vicious Jackal"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Doomed enemy suffers 1 damage at the start of each of its turns",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Doomed enemy suffers 1 damage at the start of each of its turns"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "gut shot",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/gut-shot.jpeg",
+      "level": "1",
+      "initiative": "21",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": null,
+          "otherEffects": [
+            "If target has Doom, generate Fire and gain 1 experience"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "If target has Doom, generate Fire and gain 1 experience",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "If target has Doom, generate Fire and gain 1 experience"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "detonation",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/detonation.jpeg",
+      "level": "1",
+      "initiative": "8",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            4
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": [
+            "When target dies, all enemies adjacent to its hex suffer 2 damage"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "When target dies, all enemies adjacent to its hex suffer 2 damage",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              4
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "When target dies, all enemies adjacent to its hex suffer 2 damage"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "murderous stalker",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/murderous-stalker.jpeg",
+      "level": "1",
+      "initiative": "13",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            6
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            5
+          ],
+          "statusEffects": null,
+          "otherEffects": [
+            "If this attack kills an enemy, gain 1 experience and play one card from hand or discard pile to perform a Doom action"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                6
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                5
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "If this attack kills an enemy, gain 1 experience and play one card from hand or discard pile to perform a Doom action",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              6
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "If this attack kills an enemy, gain 1 experience and play one card from hand or discard pile to perform a Doom action"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "a moment's peace",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/a-moments-peace.jpeg",
+      "level": "1",
+      "initiative": "88",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": [
+            "Reveal the top card of one monster ability deck within range 5"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": [
+            "Heal 2 one summon or self; heal 1 self or one adjacent ally"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Reveal the top card of one monster ability deck within range 5",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Reveal the top card of one monster ability deck within range 5"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Heal 2 one summon or self; heal 1 self or one adjacent ally",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Heal 2 one summon or self; heal 1 self or one adjacent ally"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "the hunt begins",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/the-hunt-begins.jpeg",
+      "level": "1",
+      "initiative": "20",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": null,
+          "otherEffects": [
+            "If target is undamaged, add +2 Attack and gain 1 experience"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": [
+            "Your summons add +1 Attack against the enemy this Doom targets"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "If target is undamaged, add +2 Attack and gain 1 experience",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "If target is undamaged, add +2 Attack and gain 1 experience"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Your summons add +1 Attack against the enemy this Doom targets",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Your summons add +1 Attack against the enemy this Doom targets"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "solid bow",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/solid-bow.jpeg",
+      "level": "1",
+      "initiative": "54",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            5
+          ],
+          "statusEffects": null,
+          "otherEffects": [
+            "When you or a summon damages the Doom target, may Heal 2 self or one adjacent ally"
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                5
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "When you or a summon damages the Doom target, may Heal 2 self or one adjacent ally",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "When you or a summon damages the Doom target, may Heal 2 self or one adjacent ally"
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "foot snare",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/foot-snare.jpeg",
+      "level": "1",
+      "initiative": "14",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "forward momentum",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/forward-momentum.jpeg",
+      "level": "1",
+      "initiative": "11",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "hidden danger",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/hidden-danger.jpeg",
+      "level": "1",
+      "initiative": "72",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "give chase",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/give-chase.jpeg",
+      "level": "X",
+      "initiative": "80",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "feral aid",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/feral-aid.jpeg",
+      "level": "X",
+      "initiative": "35",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "fierce fighter",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/fierce-fighter.jpeg",
+      "level": "X",
+      "initiative": "78",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "relentless offensive",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/relentless-offensive.jpeg",
+      "level": "2",
+      "initiative": "63",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "dual shot",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/dual-shot.jpeg",
+      "level": "2",
+      "initiative": "52",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "walking bastion",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/walking-bastion.jpeg",
+      "level": "3",
+      "initiative": "90",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "swift trickery",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/swift-trickery.jpeg",
+      "level": "3",
+      "initiative": "10",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "camouflage",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/camouflage.jpeg",
+      "level": "4",
+      "initiative": "6",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "coated arrows",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/coated-arrows.jpeg",
+      "level": "4",
+      "initiative": "25",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "felling swoop",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/felling-swoop.jpeg",
+      "level": "5",
+      "initiative": "93",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "expose",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/expose.jpeg",
+      "level": "5",
+      "initiative": "31",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "wild command",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/wild-command.jpeg",
+      "level": "6",
+      "initiative": "46",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "impending end",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/impending-end.jpeg",
+      "level": "6",
+      "initiative": "47",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "charging beast",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/charging-beast.jpeg",
+      "level": "7",
+      "initiative": "82",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "darkened skies",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/darkened-skies.jpeg",
+      "level": "7",
+      "initiative": "36",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "feral instincts",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/feral-instincts.jpeg",
+      "level": "8",
+      "initiative": "17",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "press the attack",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/press-the-attack.jpeg",
+      "level": "8",
+      "initiative": "22",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "predator and prey",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/predator-and-prey.jpeg",
+      "level": "9",
+      "initiative": "86",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    },
+    {
+      "name": "heart of doom",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/DS2/heart-of-doom.jpeg",
+      "level": "9",
+      "initiative": "40",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": null,
+          "otherEffects": null,
+          "elements": {
+            "generate": null,
+            "consume": null
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "unreviewed",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": null,
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": null,
+            "persistent": null,
+            "augment": null,
+            "roundBonus": null
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "website": "https://www.gloomhavencards.com/gh2",
+    "repository": "https://github.com/cmlenius/gloomhaven-card-browser",
+    "dataset": "data/characters/gloomhaven-2nd-edition.json and data/character-abilities/gloomhaven-2nd-edition.json"
+  }
+}

@@ -1,0 +1,6694 @@
+{
+  "character": {
+    "id": "MT2",
+    "game": "gh2",
+    "colour": "#374458",
+    "base": true,
+    "name": "Mindthief",
+    "noBackMat": true,
+    "portrait": "character-mats/gloomhaven-2nd-edition/gh2-mindthief.jpeg",
+    "classIcon": "icons/characters/gh2/MT2.png",
+    "perkSheet": "character-perks/gloomhaven-2nd-edition/gh2-mindthief-perks.jpeg",
+    "handSize": 10,
+    "backgroundImage": "/character-art/mindthief-background.jpg",
+    "classNotesImage": "/character-art/mindthief-notes.jpg",
+    "experienceThresholds": [
+      0,
+      45,
+      95,
+      150,
+      210,
+      275,
+      345,
+      420,
+      500
+    ],
+    "maxHealthByLevel": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "perkDefinitions": [
+      {
+        "id": "replaceNegatives",
+        "boxes": 2,
+        "title": "Replace two −1 cards with one +0 card",
+        "benefit": "After the attack ability, control its target to Move 1.",
+        "styles": [
+          "Control"
+        ]
+      },
+      {
+        "id": "conditionDamage",
+        "boxes": 3,
+        "title": "Replace one +0 with a +1 condition-bonus card",
+        "benefit": "Add +1 Attack for each negative condition the target already has.",
+        "styles": [
+          "Melee",
+          "Control"
+        ]
+      },
+      {
+        "id": "replaceZero",
+        "boxes": 2,
+        "title": "Replace one +0 card with one +2 card",
+        "benefit": "Improves the deck used by you and your summons.",
+        "styles": [
+          "Melee",
+          "Summons"
+        ]
+      },
+      {
+        "id": "immobilize",
+        "boxes": 1,
+        "title": "Add two +1 Immobilize cards",
+        "benefit": "Apply Immobilize after attack damage.",
+        "styles": [
+          "Melee",
+          "Control",
+          "Summons"
+        ]
+      },
+      {
+        "id": "ice",
+        "boxes": 3,
+        "title": "Add one +2 Ice card",
+        "benefit": "Infuse Ice after the acting figure’s turn; it cannot fund an earlier action.",
+        "styles": [
+          "Ice",
+          "Summons"
+        ]
+      },
+      {
+        "id": "invisible",
+        "boxes": 2,
+        "title": "Add one rolling Invisible Self card",
+        "benefit": "The attacking figure gains Invisible, including a rat drawing the card.",
+        "styles": [
+          "Melee",
+          "Summons"
+        ]
+      },
+      {
+        "id": "scenario",
+        "boxes": 1,
+        "title": "Ignore scenario effects and add one rolling +1 card",
+        "benefit": "The rolling +1 changes the modifier deck. These training encounters have no scenario penalties.",
+        "styles": [
+          "Melee",
+          "Ice",
+          "Control",
+          "Summons"
+        ]
+      },
+      {
+        "id": "controlDeck",
+        "boxes": 1,
+        "title": "Controlled enemy attacks may use your modifier deck",
+        "benefit": "Enables your upgraded deck for enemy attacks you control. Without this unlock, they use the monster deck.",
+        "styles": [
+          "Control"
+        ]
+      },
+      {
+        "id": "lyingLow",
+        "boxes": 1,
+        "title": "Count as last in initiative order for monster focus",
+        "benefit": "Changes focus tie-breaking for the Mindthief only; summons do not gain this benefit.",
+        "styles": [
+          "Melee",
+          "Control",
+          "Summons"
+        ]
+      },
+      {
+        "id": "restControl",
+        "boxes": 2,
+        "linked": true,
+        "title": "After each rest, consume Ice or Dark for enemy control",
+        "benefit": "Optionally control one enemy within Range 5 to perform Attack 1. Both connected boxes are required.",
+        "styles": [
+          "Ice",
+          "Control"
+        ]
+      }
+    ],
+    "masteryDefinitions": [
+      {
+        "id": "controlKills",
+        "text": "In a single scenario, kill 5 or more enemies with control abilities."
+      },
+      {
+        "id": "fourAugments",
+        "text": "In a single scenario, trigger the on-attack effect from four different Augments at least 3 times each."
+      }
+    ]
+  },
+  "abilityCards": [
+    {
+      "name": "submissive affliction",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/submissive-affliction.jpeg",
+      "level": "1",
+      "initiative": "48",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 2; +1 Attack per negative condition on the target."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [],
+          "otherEffects": [
+            "Control an enemy within Range 4 to Move 1. Optionally consume Ice for the controlled enemy to suffer 2 damage and gain 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice"
+            ]
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 2; +1 Attack per negative condition on the target."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Control 1 enemy; controlled enemy suffers 2 damage",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Control an enemy within Range 4 to Move 1. Optionally consume Ice for the controlled enemy to suffer 2 damage and gain 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Ice"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 2; +1 Attack per negative condition on the target.",
+        "bottom": "Control an enemy within Range 4 to Move 1. Optionally consume Ice for the controlled enemy to suffer 2 damage and gain 1 XP.",
+        "ratings": [
+          9,
+          8,
+          6,
+          3
+        ],
+        "melee": 1,
+        "control": 1,
+        "consume": [
+          "Ice"
+        ],
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "bottomElements": {
+        "generate": [],
+        "consume": [
+          "Ice"
+        ]
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 2,
+              "perCondition": 1
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "control",
+              "range": 4,
+              "effects": [
+                {
+                  "kind": "move",
+                  "amount": 1
+                },
+                {
+                  "kind": "consume",
+                  "element": "Ice",
+                  "effects": [
+                    {
+                      "kind": "suffer",
+                      "amount": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hidden in the shadows",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/hidden-in-the-shadows.jpeg",
+      "level": "1",
+      "initiative": "14",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Invisible"
+          ],
+          "otherEffects": [
+            "Attack 3 with advantage; if it kills, gain Invisible Self."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Invisible": "Self · on kill"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Invisible"
+          ],
+          "otherEffects": [
+            "If you have not moved this round, gain Invisible Self. You cannot perform Move abilities this round; lose this Invisible at round end."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Invisible": "Self · if not moved this round"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Advantage",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 3 with advantage; if it kills, gain Invisible Self."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.condition.1",
+              "kind": "condition",
+              "name": "Invisible",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.statusEffects"
+            },
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Cannot perform Move abilities this round; lose Invisible at round end",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": [
+              "Invisible"
+            ],
+            "otherEffects": [
+              "If you have not moved this round, gain Invisible Self. You cannot perform Move abilities this round; lose this Invisible at round end."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 3 with advantage; if it kills, gain Invisible Self.",
+        "bottom": "If you have not moved this round, gain Invisible Self. You cannot perform Move abilities this round; lose this Invisible at round end.",
+        "ratings": [
+          7,
+          5,
+          4,
+          4
+        ],
+        "melee": 1,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 3,
+              "killInvisible": true,
+              "advantage": true
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "status",
+              "condition": "Invisible",
+              "range": 0,
+              "self": true
+            }
+          ],
+          "round": true
+        }
+      }
+    },
+    {
+      "name": "scurry",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/scurry.jpeg",
+      "level": "1",
+      "initiative": "20",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 3, then Attack 2."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Loot 2; loss, gain 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 3, then Attack 2."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.heal-values",
+              "kind": "heal-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.heals"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Loot 2; loss, gain 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Move 3, then Attack 2.",
+        "bottom": "Loot 2; loss, gain 1 XP.",
+        "ratings": [
+          8,
+          6,
+          4,
+          5
+        ],
+        "melee": 1,
+        "bottomLoss": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": true,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 3
+            },
+            {
+              "kind": "attack",
+              "amount": 2
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "loot",
+              "amount": 2
+            }
+          ],
+          "loss": true
+        }
+      }
+    },
+    {
+      "name": "withering claw",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/withering-claw.jpeg",
+      "level": "1",
+      "initiative": "18",
+      "augment": true,
+      "augmentSide": "top",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Poison",
+            "Muddle",
+            "Wound"
+          ],
+          "otherEffects": [
+            "Augment: add Poison and Muddle to all your melee attacks. Activation: Attack 2 with Wound."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Poison": "Augment · melee attacks",
+            "Muddle": "Augment · melee attacks",
+            "Wound": "activation attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Control an enemy within Range 4 to Attack 2."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.condition.1",
+              "kind": "condition",
+              "name": "Wound",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.statusEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": [
+              "Wound"
+            ],
+            "otherEffects": [
+              "Augment: add Poison and Muddle to all your melee attacks. Activation: Attack 2 with Wound."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Control an enemy within Range 4 to Attack 2."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: add Poison and Muddle to all your melee attacks. Activation: Attack 2 with Wound.",
+        "bottom": "Control an enemy within Range 4 to Attack 2.",
+        "ratings": [
+          10,
+          7,
+          10,
+          6
+        ],
+        "melee": 1,
+        "control": 1,
+        "conditions": 3,
+        "augment": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "withering"
+            },
+            {
+              "kind": "attack",
+              "amount": 2,
+              "conditions": [
+                "Wound"
+              ]
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "control",
+              "range": 4,
+              "effects": [
+                {
+                  "kind": "attack",
+                  "amount": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "frigid apparition",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/frigid-apparition.jpeg",
+      "level": "1",
+      "initiative": "10",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 3; create Ice."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Stun"
+          ],
+          "otherEffects": [
+            "Move 4, then Attack 2 with Stun; create Ice. Loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Stun": "loss attack"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.element-generate.1",
+              "kind": "element-generate",
+              "element": "Ice",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.elements.generate"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 3; create Ice."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.element-generate.1",
+              "kind": "element-generate",
+              "element": "Ice",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.elements.generate"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4, then Attack 2 with Stun; create Ice. Loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 3; create Ice.",
+        "bottom": "Move 4, then Attack 2 with Stun; create Ice. Loss, gain 2 XP.",
+        "ratings": [
+          8,
+          10,
+          6,
+          5
+        ],
+        "melee": 1,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "bottomLoss": true,
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": true,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 3
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4
+            },
+            {
+              "kind": "attack",
+              "amount": 2,
+              "conditions": [
+                "Stun"
+              ]
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ],
+          "loss": true
+        }
+      }
+    },
+    {
+      "name": "the mind's weakness",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/the-minds-weakness.jpeg",
+      "level": "1",
+      "initiative": "75",
+      "augment": true,
+      "augmentSide": "top",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Augment: +1 Attack to all your melee attacks. Activation: Attack 2, then control that target to Attack 2."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            1
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Disarm"
+          ],
+          "otherEffects": [
+            "Attack 1 with Disarm."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Disarm": "attack"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2,
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Augment: +1 Attack to all your melee attacks. Activation: Attack 2, then control that target to Attack 2."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                1
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              1
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 1 with Disarm."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: +1 Attack to all your melee attacks. Activation: Attack 2, then control that target to Attack 2.",
+        "bottom": "Attack 1 with Disarm.",
+        "ratings": [
+          7,
+          6,
+          10,
+          5
+        ],
+        "melee": 1,
+        "control": 1,
+        "conditions": 1,
+        "augment": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "weakness"
+            },
+            {
+              "kind": "attack",
+              "amount": 2
+            },
+            {
+              "kind": "control",
+              "range": 0,
+              "sameTarget": true,
+              "effects": [
+                {
+                  "kind": "attack",
+                  "amount": 2
+                }
+              ]
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 1,
+              "conditions": [
+                "Disarm"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "pilfer",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/pilfer.jpeg",
+      "level": "1",
+      "initiative": "79",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 2; if it does not kill, gain a money token. Then Loot 1."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 4."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 2; if it does not kill, gain a money token. Then Loot 1."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 2; if it does not kill, gain a money token. Then Loot 1.",
+        "bottom": "Move 4.",
+        "ratings": [
+          4,
+          3,
+          3,
+          3
+        ],
+        "melee": 1,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 2
+            },
+            {
+              "kind": "loot",
+              "amount": 1
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "perverse edge",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/perverse-edge.jpeg",
+      "level": "1",
+      "initiative": "8",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 3; +2 Attack and 1 XP per negative condition on target; create Dark. Loss."
+          ],
+          "elements": {
+            "generate": [
+              "Dark"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Stun"
+          ],
+          "otherEffects": [
+            "Optionally consume Ice to apply Stun at Range 1 and gain 1 XP; then Move 3."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice"
+            ]
+          },
+          "statusEffectDetails": {
+            "Stun": "requires Ice"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 3; +2 Attack and 1 XP per negative condition on target; create Dark. Loss."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Dark"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.element-consume.1",
+              "kind": "element-consume",
+              "element": "Ice",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "missingElementBehavior": "skip-linked-effect",
+              "linkedEffectNodeId": null,
+              "sourceField": "actionIndex.elements.consume"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Optionally consume Ice to apply Stun at Range 1 and gain 1 XP; then Move 3."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": [
+              "Ice"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 3; +2 Attack and 1 XP per negative condition on target; create Dark. Loss.",
+        "bottom": "Optionally consume Ice to apply Stun at Range 1 and gain 1 XP; then Move 3.",
+        "ratings": [
+          10,
+          10,
+          5,
+          5
+        ],
+        "melee": 1,
+        "consume": [
+          "Ice"
+        ],
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "topLoss": true,
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": true,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [
+          "Dark"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 3,
+              "perCondition": 2
+            },
+            {
+              "kind": "infuse",
+              "element": "Dark"
+            }
+          ],
+          "loss": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "consume",
+              "element": "Ice",
+              "effects": [
+                {
+                  "kind": "status",
+                  "condition": "Stun",
+                  "range": 1,
+                  "self": false
+                }
+              ]
+            },
+            {
+              "kind": "move",
+              "amount": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "empathetic assault",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/empathetic-assault.jpeg",
+      "level": "1",
+      "initiative": "12",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            4
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            5
+          ],
+          "statusEffects": [
+            "Immobilize"
+          ],
+          "otherEffects": [
+            "Attack 4 at Range 5 with Immobilize; create Ice. Loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Immobilize": "loss attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            2
+          ],
+          "heals": [
+            2
+          ],
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 2, then Heal 2 Self."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                5
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              4
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 4 at Range 5 with Immobilize; create Ice. Loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.heal-values",
+              "kind": "heal-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.heals"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              2
+            ],
+            "healValues": [
+              2
+            ],
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 2, then Heal 2 Self."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 4 at Range 5 with Immobilize; create Ice. Loss, gain 2 XP.",
+        "bottom": "Move 2, then Heal 2 Self.",
+        "ratings": [
+          7,
+          8,
+          5,
+          5
+        ],
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "topLoss": true,
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": true,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 4,
+              "range": 5,
+              "conditions": [
+                "Immobilize"
+              ]
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ],
+          "loss": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 2
+            },
+            {
+              "kind": "heal",
+              "amount": 2,
+              "self": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "psychic blade",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/psychic-blade.jpeg",
+      "level": "1",
+      "initiative": "77",
+      "augment": true,
+      "augmentSide": "top",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Curse"
+          ],
+          "otherEffects": [
+            "Augment: single-target melee attacks may target enemies within 2 hexes of you. Activation: Attack 3 with Curse, then control that target to Move 1."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Curse": "activation attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Curse"
+          ],
+          "otherEffects": [
+            "Move 3; add Curse to your melee attacks this round."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Curse": "melee attacks this round"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Augment: single-target melee attacks may target enemies within 2 hexes of you. Activation: Attack 3 with Curse, then control that target to Move 1."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 3; add Curse to your melee attacks this round."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: single-target melee attacks may target enemies within 2 hexes of you. Activation: Attack 3 with Curse, then control that target to Move 1.",
+        "bottom": "Move 3; add Curse to your melee attacks this round.",
+        "ratings": [
+          7,
+          5,
+          7,
+          4
+        ],
+        "melee": 1,
+        "control": 1,
+        "conditions": 1,
+        "augment": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "blade"
+            },
+            {
+              "kind": "attack",
+              "amount": 3,
+              "conditions": [
+                "Curse"
+              ]
+            },
+            {
+              "kind": "control",
+              "range": 0,
+              "sameTarget": true,
+              "effects": [
+                {
+                  "kind": "move",
+                  "amount": 1
+                }
+              ]
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 3
+            },
+            {
+              "kind": "curseRound"
+            }
+          ],
+          "round": true
+        }
+      }
+    },
+    {
+      "name": "feedback loop",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/feedback-loops.jpeg",
+      "level": "X",
+      "initiative": "51",
+      "augment": true,
+      "augmentSide": "top",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Augment: after each of your melee attack abilities, grant one of your summons Attack +0. Activation: grant a summon Attack 2, then grant a summon Move +0. These are summon actions, not Mindthief actions."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Muddle"
+          ],
+          "otherEffects": [
+            "Move 4 with Jump; if ending in the starting hex, all enemies moved through gain Muddle."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Muddle": "return to starting hex · enemies moved through"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Augment: after each of your melee attack abilities, grant one of your summons Attack +0. Activation: grant a summon Attack 2, then grant a summon Move +0. These are summon actions, not Mindthief actions."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4 with Jump; if ending in the starting hex, all enemies moved through gain Muddle."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: after each of your melee attack abilities, grant one of your summons Attack +0. Activation: grant a summon Attack 2, then grant a summon Move +0. These are summon actions, not Mindthief actions.",
+        "bottom": "Move 4 with Jump; if ending in the starting hex, all enemies moved through gain Muddle.",
+        "ratings": [
+          4,
+          4,
+          6,
+          10
+        ],
+        "conditions": 1,
+        "summon": "support",
+        "augment": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "feedback"
+            },
+            {
+              "kind": "grant",
+              "action": "attack",
+              "amount": 2,
+              "offset": false
+            },
+            {
+              "kind": "grant",
+              "action": "move",
+              "amount": 0,
+              "offset": true
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4,
+              "jump": true,
+              "returnMuddle": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "possession",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/possession.jpeg",
+      "level": "X",
+      "initiative": "71",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [
+            "Muddle"
+          ],
+          "otherEffects": [
+            "Control an enemy within Range 4 to Attack 3 with Muddle."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Muddle": "controlled enemy attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 3, then grant one of your summons Move 2."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Control 1 enemy; controlled enemy performs Attack 3",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Control an enemy within Range 4 to Attack 3 with Muddle."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Grant one summon Heal 2",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 3, then grant one of your summons Move 2."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Control an enemy within Range 4 to Attack 3 with Muddle.",
+        "bottom": "Move 3, then grant one of your summons Move 2.",
+        "ratings": [
+          3,
+          3,
+          10,
+          9
+        ],
+        "control": 1,
+        "conditions": 1,
+        "summon": "support",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "control",
+              "range": 4,
+              "effects": [
+                {
+                  "kind": "attack",
+                  "amount": 3,
+                  "conditions": [
+                    "Muddle"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 3
+            },
+            {
+              "kind": "grant",
+              "action": "move",
+              "amount": 2,
+              "offset": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gnawing horde",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/gnawing-horde.jpeg",
+      "level": "X",
+      "initiative": "82",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Poison"
+          ],
+          "otherEffects": [
+            "Summon Rat Swarm: HP 5, Move 2, Attack 2, melee, Poison. Persistent loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Poison": "Rat Swarm attacks"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 4."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Summon Rat Swarm: HP 5, Move 2, Attack 2, melee, Poison. Persistent loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": true,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Summon Rat Swarm: HP 5, Move 2, Attack 2, melee, Poison. Persistent loss, gain 2 XP.",
+        "bottom": "Move 4.",
+        "ratings": [
+          2,
+          2,
+          4,
+          10
+        ],
+        "summon": "body",
+        "topLoss": true,
+        "persistent": "top",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": true,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "summon",
+              "rat": {
+                "name": "Rat Swarm",
+                "hp": 5,
+                "move": 2,
+                "attack": 2,
+                "poison": true
+              }
+            }
+          ],
+          "active": true,
+          "loss": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "fearsome blade",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/fearsome-blade.jpeg",
+      "level": "2",
+      "initiative": "27",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Curse"
+          ],
+          "otherEffects": [
+            "Attack 2, Push 2, Curse. Optionally consume Ice for +2 Attack and 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice"
+            ]
+          },
+          "statusEffectDetails": {
+            "Curse": "attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Disarm"
+          ],
+          "otherEffects": [
+            "Disarm at Range 1, then Move 4."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Disarm": "Range 1"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 2, Push 2, Curse. Optionally consume Ice for +2 Attack and 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Ice"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Disarm at Range 1, then Move 4."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 2, Push 2, Curse. Optionally consume Ice for +2 Attack and 1 XP.",
+        "bottom": "Disarm at Range 1, then Move 4.",
+        "ratings": [
+          7,
+          9,
+          7,
+          4
+        ],
+        "melee": 1,
+        "conditions": 2,
+        "consume": [
+          "Ice"
+        ],
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [],
+        "consume": [
+          "Ice"
+        ]
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 2,
+              "push": 2,
+              "conditions": [
+                "Curse"
+              ],
+              "boosts": [
+                {
+                  "element": "Ice",
+                  "amount": 2
+                }
+              ]
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "status",
+              "condition": "Disarm",
+              "range": 1,
+              "self": false
+            },
+            {
+              "kind": "move",
+              "amount": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "hostile takeover",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/hostile-takeover.jpeg",
+      "level": "2",
+      "initiative": "9",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [
+            "Wound"
+          ],
+          "otherEffects": [
+            "Attack 2 at Range 4 with Wound; create Ice."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Wound": "attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Choose a normal or elite enemy within Range 4. During its turn this round, reverse allies/enemies and control its abilities; create Dark. Round bonus loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": [
+              "Dark"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.condition.1",
+              "kind": "condition",
+              "name": "Wound",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.statusEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": [
+              "Wound"
+            ],
+            "otherEffects": [
+              "Attack 2 at Range 4 with Wound; create Ice."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Choose a normal or elite enemy within Range 4. During its turn this round, reverse allies/enemies and control its abilities; create Dark. Round bonus loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Dark"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 2 at Range 4 with Wound; create Ice.",
+        "bottom": "Choose a normal or elite enemy within Range 4. During its turn this round, reverse allies/enemies and control its abilities; create Dark. Round bonus loss, gain 2 XP.",
+        "ratings": [
+          6,
+          10,
+          10,
+          6
+        ],
+        "control": 1,
+        "conditions": 1,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "bottomLoss": true,
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": true,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": []
+      },
+      "bottomElements": {
+        "generate": [
+          "Dark"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 2,
+              "range": 4,
+              "conditions": [
+                "Wound"
+              ]
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "takeover",
+              "range": 4
+            },
+            {
+              "kind": "infuse",
+              "element": "Dark"
+            }
+          ],
+          "loss": true,
+          "round": true
+        }
+      }
+    },
+    {
+      "name": "brain leech",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/brain-leech.jpeg",
+      "level": "3",
+      "initiative": "21",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [
+            "Wound"
+          ],
+          "otherEffects": [
+            "Control an enemy within Range 4 to Move 2 then Attack 2. Optionally consume Ice to add Wound and gain 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice"
+            ]
+          },
+          "statusEffectDetails": {
+            "Wound": "controlled enemy attack · requires Ice"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            1
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Strengthen"
+          ],
+          "otherEffects": [
+            "Attack 1; if performed, Strengthen Self."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Strengthen": "Self · after performing attack"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Control 1 enemy; controlled enemy performs Move 2 and Attack 2",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Control an enemy within Range 4 to Move 2 then Attack 2. Optionally consume Ice to add Wound and gain 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Ice"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                1
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              1
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 1; if performed, Strengthen Self."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Control an enemy within Range 4 to Move 2 then Attack 2. Optionally consume Ice to add Wound and gain 1 XP.",
+        "bottom": "Attack 1; if performed, Strengthen Self.",
+        "ratings": [
+          8,
+          8,
+          10,
+          5
+        ],
+        "melee": 1,
+        "control": 1,
+        "conditions": 1,
+        "consume": [
+          "Ice"
+        ],
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [],
+        "consume": [
+          "Ice"
+        ]
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "control",
+              "range": 4,
+              "effects": [
+                {
+                  "kind": "move",
+                  "amount": 2
+                },
+                {
+                  "kind": "attack",
+                  "amount": 2,
+                  "boosts": [
+                    {
+                      "element": "Ice",
+                      "amount": 0,
+                      "conditions": [
+                        "Wound"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 1
+            },
+            {
+              "kind": "status",
+              "condition": "Strengthen",
+              "range": 0,
+              "self": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cranium overload",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/cranium-overload.jpeg",
+      "level": "3",
+      "initiative": "5",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            6,
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [],
+          "otherEffects": [
+            "Designate an enemy hex within Range 4. Attack 6 against its enemy, Pierce 5; on a kill, Attack 2 against all enemies adjacent to that hex. Melee attacks from the designated hex, loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            5
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 5 with Jump."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                6,
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              6,
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Designate an enemy hex within Range 4. Attack 6 against its enemy, Pierce 5; on a kill, Attack 2 against all enemies adjacent to that hex. Melee attacks from the designated hex, loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                5
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              5
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 5 with Jump."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Designate an enemy hex within Range 4. Attack 6 against its enemy, Pierce 5; on a kill, Attack 2 against all enemies adjacent to that hex. Melee attacks from the designated hex, loss, gain 2 XP.",
+        "bottom": "Move 5 with Jump.",
+        "ratings": [
+          8,
+          5,
+          5,
+          6
+        ],
+        "topLoss": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": true,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 6,
+              "range": 4,
+              "pierce": 5,
+              "killSplash": 2,
+              "designated": true,
+              "melee": true
+            }
+          ],
+          "loss": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 5,
+              "jump": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "frozen shiv",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/frozen-shiv.jpeg",
+      "level": "4",
+      "initiative": "16",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            4
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 4, Pierce 1; create Ice."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            3,
+            3
+          ],
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 3, Move 3, Attack 3; create Ice. Loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              4
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 4, Pierce 1; create Ice."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3,
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3,
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 3, Move 3, Attack 3; create Ice. Loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": true,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 4, Pierce 1; create Ice.",
+        "bottom": "Attack 3, Move 3, Attack 3; create Ice. Loss, gain 2 XP.",
+        "ratings": [
+          10,
+          10,
+          5,
+          8
+        ],
+        "melee": 1,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "bottomLoss": true,
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": true,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": []
+      },
+      "bottomElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 4,
+              "pierce": 1
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 3
+            },
+            {
+              "kind": "move",
+              "amount": 3
+            },
+            {
+              "kind": "attack",
+              "amount": 3
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ],
+          "loss": true
+        }
+      }
+    },
+    {
+      "name": "silent scream",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/silent-scream.jpeg",
+      "level": "4",
+      "initiative": "83",
+      "augment": true,
+      "augmentSide": "top",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Immobilize"
+          ],
+          "otherEffects": [
+            "Augment: after each of your melee attack abilities, Heal 2 at Range 2. This can heal a nearby summon. Activation: Attack 2 with Immobilize."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Immobilize": "activation attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [],
+          "otherEffects": [
+            "Control an enemy within Range 4 to Attack −1; create Ice."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Augment: after each of your melee attack abilities, Heal 2 at Range 2. This can heal a nearby summon. Activation: Attack 2 with Immobilize."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Control an enemy within Range 4 to Attack −1; create Ice."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: after each of your melee attack abilities, Heal 2 at Range 2. This can heal a nearby summon. Activation: Attack 2 with Immobilize.",
+        "bottom": "Control an enemy within Range 4 to Attack −1; create Ice.",
+        "ratings": [
+          6,
+          7,
+          9,
+          10
+        ],
+        "melee": 1,
+        "control": 1,
+        "conditions": 1,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "summon": "sustain",
+        "augment": true,
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "bottomElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "scream"
+            },
+            {
+              "kind": "attack",
+              "amount": 2,
+              "conditions": [
+                "Immobilize"
+              ]
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "control",
+              "range": 4,
+              "effects": [
+                {
+                  "kind": "attack",
+                  "amount": -1,
+                  "offset": true
+                }
+              ]
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "mass hysteria",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/mass-hysteria.jpeg",
+      "level": "5",
+      "initiative": "11",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            1
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [
+            "Muddle"
+          ],
+          "otherEffects": [
+            "Attack 1, Target 4, Range 4, Pierce 3, Muddle; create Ice."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Muddle": "attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Poison"
+          ],
+          "otherEffects": [
+            "Move 3 with Jump; enemies moved through gain Poison; create Dark."
+          ],
+          "elements": {
+            "generate": [
+              "Dark"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Poison": "enemies moved through"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                1
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              1
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 1, Target 4, Range 4, Pierce 3, Muddle; create Ice."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 3 with Jump; enemies moved through gain Poison; create Dark."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Dark"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 1, Target 4, Range 4, Pierce 3, Muddle; create Ice.",
+        "bottom": "Move 3 with Jump; enemies moved through gain Poison; create Dark.",
+        "ratings": [
+          6,
+          9,
+          8,
+          8
+        ],
+        "conditions": 2,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": []
+      },
+      "bottomElements": {
+        "generate": [
+          "Dark"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 1,
+              "range": 4,
+              "targets": 4,
+              "pierce": 3,
+              "conditions": [
+                "Muddle"
+              ]
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 3,
+              "jump": true,
+              "throughPoison": true
+            },
+            {
+              "kind": "infuse",
+              "element": "Dark"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gangling abomination",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/gangling-abomination.jpeg",
+      "level": "5",
+      "initiative": "81",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Summon Rat Monstrosity: HP 8, Move 3, Attack 3, melee; +1 Attack if target has a negative condition. Persistent loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": [
+            2
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 2, then Attack 2."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Summon Rat Monstrosity: HP 8, Move 3, Attack 3, melee; +1 Attack if target has a negative condition. Persistent loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": true,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              2
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 2, then Attack 2."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Summon Rat Monstrosity: HP 8, Move 3, Attack 3, melee; +1 Attack if target has a negative condition. Persistent loss, gain 2 XP.",
+        "bottom": "Move 2, then Attack 2.",
+        "ratings": [
+          6,
+          4,
+          5,
+          10
+        ],
+        "summon": "body",
+        "topLoss": true,
+        "persistent": "top",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": true,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "summon",
+              "rat": {
+                "name": "Rat Monstrosity",
+                "hp": 8,
+                "move": 3,
+                "attack": 3,
+                "conditional": true
+              }
+            }
+          ],
+          "active": true,
+          "loss": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 2
+            },
+            {
+              "kind": "attack",
+              "amount": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "telepathic command",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/telepathic-command.jpeg",
+      "level": "6",
+      "initiative": "17",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Invisible"
+          ],
+          "otherEffects": [
+            "Grant one of your summons Attack +0, then Invisible Self."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Invisible": "Self"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 4, then grant one of your summons Move 4."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "unreviewed",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": null,
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Grant one of your summons Attack +0, then Invisible Self."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4, then grant one of your summons Move 4."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Grant one of your summons Attack +0, then Invisible Self.",
+        "bottom": "Move 4, then grant one of your summons Move 4.",
+        "ratings": [
+          3,
+          3,
+          4,
+          10
+        ],
+        "summon": "support",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "grant",
+              "action": "attack",
+              "amount": 0,
+              "offset": true
+            },
+            {
+              "kind": "status",
+              "condition": "Invisible",
+              "range": 0,
+              "self": true
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4
+            },
+            {
+              "kind": "grant",
+              "action": "move",
+              "amount": 4,
+              "offset": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "dark frenzy",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/dark-frenzy.jpeg",
+      "level": "6",
+      "initiative": "39",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Attack 3; independently consume Ice for +2 Attack and 1 XP, and/or Dark for +2 Attack and 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice",
+              "Dark"
+            ]
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            3
+          ],
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [],
+          "otherEffects": [
+            "Move 3, then control two enemies within Range 4 to Move 1. Optionally consume Ice for the controlled enemies to suffer 1 damage and gain 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice"
+            ]
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 3; independently consume Ice for +2 Attack and 1 XP, and/or Dark for +2 Attack and 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Ice",
+              "Dark"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              3
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 3, then control two enemies within Range 4 to Move 1. Optionally consume Ice for the controlled enemies to suffer 1 damage and gain 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Ice"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 3; independently consume Ice for +2 Attack and 1 XP, and/or Dark for +2 Attack and 1 XP.",
+        "bottom": "Move 3, then control two enemies within Range 4 to Move 1. Optionally consume Ice for the controlled enemies to suffer 1 damage and gain 1 XP.",
+        "ratings": [
+          9,
+          10,
+          9,
+          5
+        ],
+        "melee": 1,
+        "control": 2,
+        "consume": [
+          "Ice",
+          "Dark"
+        ],
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [],
+        "consume": [
+          "Ice",
+          "Dark"
+        ]
+      },
+      "bottomElements": {
+        "generate": [],
+        "consume": [
+          "Ice"
+        ]
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 3,
+              "boosts": [
+                {
+                  "element": "Ice",
+                  "amount": 2
+                },
+                {
+                  "element": "Dark",
+                  "amount": 2
+                }
+              ]
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 3
+            },
+            {
+              "kind": "control",
+              "range": 4,
+              "count": 2,
+              "effects": [
+                {
+                  "kind": "move",
+                  "amount": 1
+                }
+              ]
+            },
+            {
+              "kind": "consume",
+              "element": "Ice",
+              "effects": [
+                {
+                  "kind": "suffer",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "domination",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/domination.jpeg",
+      "level": "7",
+      "initiative": "13",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [],
+          "otherEffects": [
+            "Control two enemies within Range 4 that are adjacent to each other to Attack 3."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Persistent: you may maintain two active Augments; activating a third discards one of the other two. Dismissing this with two Augments requires discarding one."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            },
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Control 2 adjacent enemies; controlled enemies perform Attack 3",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Control two enemies within Range 4 that are adjacent to each other to Attack 3."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Maintain a maximum of 2 active Augments",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "persistent-active",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Persistent: you may maintain two active Augments; activating a third discards one of the other two. Dismissing this with two Augments requires discarding one."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Control two enemies within Range 4 that are adjacent to each other to Attack 3.",
+        "bottom": "Persistent: you may maintain two active Augments; activating a third discards one of the other two. Dismissing this with two Augments requires discarding one.",
+        "ratings": [
+          7,
+          5,
+          10,
+          9
+        ],
+        "control": 2,
+        "persistent": "bottom",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": true,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "control",
+              "range": 4,
+              "count": 2,
+              "adjacent": true,
+              "effects": [
+                {
+                  "kind": "attack",
+                  "amount": 3
+                }
+              ]
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "persistent",
+              "effect": "domination"
+            }
+          ],
+          "active": true
+        }
+      }
+    },
+    {
+      "name": "psychic projection",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/psychic-projection.jpeg",
+      "level": "7",
+      "initiative": "92",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Augment: +1 Attack to your melee attacks per negative condition on the target. Activation: Pull 2 at Range 3, then Attack 3."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Designate an unoccupied hex within Range 4; perform melee Attack 3 as though you occupied it; create Dark."
+          ],
+          "elements": {
+            "generate": [
+              "Dark"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Augment: +1 Attack to your melee attacks per negative condition on the target. Activation: Pull 2 at Range 3, then Attack 3."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "bottom.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Designate an unoccupied hex within Range 4; perform melee Attack 3 as though you occupied it; create Dark."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Dark"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: +1 Attack to your melee attacks per negative condition on the target. Activation: Pull 2 at Range 3, then Attack 3.",
+        "bottom": "Designate an unoccupied hex within Range 4; perform melee Attack 3 as though you occupied it; create Dark.",
+        "ratings": [
+          10,
+          6,
+          7,
+          4
+        ],
+        "melee": 1,
+        "augment": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": true,
+      "augmentSide": "top",
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "bottomElements": {
+        "generate": [
+          "Dark"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "projection"
+            },
+            {
+              "kind": "pull",
+              "amount": 2,
+              "range": 3
+            },
+            {
+              "kind": "attack",
+              "amount": 3
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 3,
+              "range": 4,
+              "designated": true,
+              "melee": true
+            },
+            {
+              "kind": "infuse",
+              "element": "Dark"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "shared nightmare",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/shared-nightmare.jpeg",
+      "level": "8",
+      "initiative": "7",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": [
+            4
+          ],
+          "statusEffects": [
+            "Poison",
+            "Curse"
+          ],
+          "otherEffects": [
+            "Attack 2, Target 2, Range 4, Poison; optionally consume Dark for Curse and 1 XP; create Ice."
+          ],
+          "elements": {
+            "generate": [
+              "Ice"
+            ],
+            "consume": [
+              "Dark"
+            ]
+          },
+          "statusEffectDetails": {
+            "Poison": "attack",
+            "Curse": "requires Dark"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": [
+            1
+          ],
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": [
+            2
+          ],
+          "statusEffects": [
+            "Stun"
+          ],
+          "otherEffects": [
+            "Move 4, then Attack 1 at Range 2; optionally consume Ice for Stun and 1 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Ice"
+            ]
+          },
+          "statusEffectDetails": {
+            "Stun": "requires Ice"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "top.range-values",
+              "kind": "range-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 2, Target 2, Range 4, Poison; optionally consume Dark for Curse and 1 XP; create Ice."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Ice"
+            ],
+            "elementsConsumed": [
+              "Dark"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.attack-values",
+              "kind": "attack-values",
+              "values": [
+                1
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            },
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.range-values",
+              "kind": "range-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.ranges"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              1
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4, then Attack 1 at Range 2; optionally consume Ice for Stun and 1 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Ice"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 2, Target 2, Range 4, Poison; optionally consume Dark for Curse and 1 XP; create Ice.",
+        "bottom": "Move 4, then Attack 1 at Range 2; optionally consume Ice for Stun and 1 XP.",
+        "ratings": [
+          8,
+          10,
+          8,
+          8
+        ],
+        "conditions": 2,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "consume": [
+          "Ice",
+          "Dark"
+        ],
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [
+          "Ice"
+        ],
+        "consume": [
+          "Dark"
+        ]
+      },
+      "bottomElements": {
+        "generate": [],
+        "consume": [
+          "Ice"
+        ]
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 2,
+              "range": 4,
+              "targets": 2,
+              "conditions": [
+                "Poison"
+              ],
+              "boosts": [
+                {
+                  "element": "Dark",
+                  "amount": 0,
+                  "conditions": [
+                    "Curse"
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "infuse",
+              "element": "Ice"
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4
+            },
+            {
+              "kind": "attack",
+              "amount": 1,
+              "range": 2,
+              "boosts": [
+                {
+                  "element": "Ice",
+                  "amount": 0,
+                  "conditions": [
+                    "Stun"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "corrupting embrace",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/corrupting-embrace.jpeg",
+      "level": "8",
+      "initiative": "15",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            1,
+            2
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Disarm",
+            "Muddle"
+          ],
+          "otherEffects": [
+            "Attack 1 with Disarm, then Attack 2 with Muddle."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Disarm": "first attack",
+            "Muddle": "second attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            4
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Stun",
+            "Curse"
+          ],
+          "otherEffects": [
+            "Move 4; persistent loss: add Stun and Curse to your next four melee attacks, with XP at the marked charges."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Stun": "next four melee attacks",
+            "Curse": "next four melee attacks"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                1,
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              1,
+              2
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Attack 1 with Disarm, then Attack 2 with Muddle."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                4
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              4
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 4; persistent loss: add Stun and Curse to your next four melee attacks, with XP at the marked charges."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": true,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Attack 1 with Disarm, then Attack 2 with Muddle.",
+        "bottom": "Move 4; persistent loss: add Stun and Curse to your next four melee attacks, with XP at the marked charges.",
+        "ratings": [
+          10,
+          7,
+          8,
+          8
+        ],
+        "melee": 2,
+        "conditions": 2,
+        "bottomLoss": true,
+        "persistent": "bottom",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": true,
+      "augment": false,
+      "topPersistent": false,
+      "bottomPersistent": true,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "attack",
+              "amount": 1,
+              "conditions": [
+                "Disarm"
+              ]
+            },
+            {
+              "kind": "attack",
+              "amount": 2,
+              "conditions": [
+                "Muddle"
+              ]
+            }
+          ]
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 4
+            },
+            {
+              "kind": "persistent",
+              "effect": "charges"
+            }
+          ],
+          "loss": true,
+          "active": true
+        }
+      }
+    },
+    {
+      "name": "many as one",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/many-as-one.jpeg",
+      "level": "9",
+      "initiative": "91",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Summon Rat King: HP 10, Move 3, melee Attack X; X is half its current HP rounded up. Persistent loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [],
+          "otherEffects": [
+            "Each round, the first ally performing a melee attack ability gains each of your active Augments for that ability. Can benefit an allied rat summon; only the first qualifying ally each round. Persistent loss, gain 2 XP."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": null
+          },
+          "statusEffectDetails": {}
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Summon Rat King (HP 10, Move 3, Attack X)",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Summon Rat King: HP 10, Move 3, melee Attack X; X is half its current HP rounded up. Persistent loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": true,
+            "augment": false,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.effect.1",
+              "kind": "unparsed-effect-text",
+              "text": "Allies gain effects of your active Augments on their first melee attack each round",
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.otherEffects"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "lost",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Each round, the first ally performing a melee attack ability gains each of your active Augments for that ability. Can benefit an allied rat summon; only the first qualifying ally each round. Persistent loss, gain 2 XP."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": null,
+            "elementsConsumed": null,
+            "summons": null,
+            "loss": true,
+            "persistent": true,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Summon Rat King: HP 10, Move 3, melee Attack X; X is half its current HP rounded up. Persistent loss, gain 2 XP.",
+        "bottom": "Each round, the first ally performing a melee attack ability gains each of your active Augments for that ability. Can benefit an allied rat summon; only the first qualifying ally each round. Persistent loss, gain 2 XP.",
+        "ratings": [
+          4,
+          3,
+          5,
+          10
+        ],
+        "summon": "sharing",
+        "topLoss": true,
+        "bottomLoss": true,
+        "persistent": "top",
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": true,
+      "bottomLost": true,
+      "augment": false,
+      "topPersistent": true,
+      "bottomPersistent": true,
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "summon",
+              "rat": {
+                "name": "Rat King",
+                "hp": 10,
+                "move": 3,
+                "attack": 0,
+                "king": true
+              }
+            }
+          ],
+          "loss": true,
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "persistent",
+              "effect": "sharing"
+            }
+          ],
+          "loss": true,
+          "active": true
+        }
+      }
+    },
+    {
+      "name": "phantasmal killer",
+      "expansion": "Gloomhaven 2nd Edition",
+      "image": "character-ability-cards/gloomhaven-2nd-edition/MT2/phantasmal-killer.jpeg",
+      "level": "9",
+      "initiative": "67",
+      "actionIndex": {
+        "top": {
+          "indexed": false,
+          "attacks": [
+            3
+          ],
+          "moves": null,
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Disarm"
+          ],
+          "otherEffects": [
+            "Augment: after each melee attack ability, control one target to Attack 3. After each control ability, optionally consume Dark for one controlled enemy to suffer 3 damage. Activation: Attack 3 with Disarm."
+          ],
+          "elements": {
+            "generate": null,
+            "consume": [
+              "Dark"
+            ]
+          },
+          "statusEffectDetails": {
+            "Disarm": "activation attack"
+          }
+        },
+        "bottom": {
+          "indexed": false,
+          "attacks": null,
+          "moves": [
+            2
+          ],
+          "heals": null,
+          "ranges": null,
+          "statusEffects": [
+            "Invisible"
+          ],
+          "otherEffects": [
+            "Move 2, Loot 1, Invisible Self; create Dark."
+          ],
+          "elements": {
+            "generate": [
+              "Dark"
+            ],
+            "consume": null
+          },
+          "statusEffectDetails": {
+            "Invisible": "Self"
+          }
+        }
+      },
+      "analysisModel": {
+        "schemaVersion": 1,
+        "top": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "top.attack-values",
+              "kind": "attack-values",
+              "values": [
+                3
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.attacks"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "augment-choice",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": [
+              3
+            ],
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": null,
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Augment: after each melee attack ability, control one target to Attack 3. After each control ability, optionally consume Dark for one controlled enemy to suffer 3 damage. Activation: Attack 3 with Disarm."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [],
+            "elementsConsumed": [
+              "Dark"
+            ],
+            "summons": null,
+            "loss": false,
+            "persistent": true,
+            "augment": true,
+            "roundBonus": null
+          }
+        },
+        "bottom": {
+          "actionIndexStatus": "partial",
+          "reviewStatus": "partial",
+          "structureReviewed": false,
+          "nodes": [
+            {
+              "id": "bottom.move-values",
+              "kind": "move-values",
+              "values": [
+                2
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.moves"
+            },
+            {
+              "id": "bottom.heal-values",
+              "kind": "heal-values",
+              "values": [
+                1
+              ],
+              "sequence": null,
+              "parentId": null,
+              "relationship": "unresolved",
+              "sourceField": "actionIndex.heals"
+            }
+          ],
+          "cardFlow": {
+            "printedAction": "unreviewed",
+            "defaultAction": "discard"
+          },
+          "elementRules": {
+            "generatedOnEndOfTurn": true,
+            "consumeIfUnavailable": "skip-linked-effect"
+          },
+          "stats": {
+            "attackValues": null,
+            "attackCount": null,
+            "meleeAttackCount": null,
+            "rangedAttackCount": null,
+            "moveValues": [
+              2
+            ],
+            "healValues": null,
+            "shieldValues": null,
+            "pierceValues": null,
+            "pushValues": null,
+            "conditions": null,
+            "otherEffects": [
+              "Move 2, Loot 1, Invisible Self; create Dark."
+            ],
+            "lootValues": null,
+            "experience": null,
+            "elementsInfused": [
+              "Dark"
+            ],
+            "elementsConsumed": [],
+            "summons": null,
+            "loss": false,
+            "persistent": false,
+            "augment": false,
+            "roundBonus": null
+          }
+        }
+      },
+      "buildReview": {
+        "top": "Augment: after each melee attack ability, control one target to Attack 3. After each control ability, optionally consume Dark for one controlled enemy to suffer 3 damage. Activation: Attack 3 with Disarm.",
+        "bottom": "Move 2, Loot 1, Invisible Self; create Dark.",
+        "ratings": [
+          10,
+          7,
+          10,
+          6
+        ],
+        "melee": 1,
+        "control": 1,
+        "conditions": 1,
+        "augment": true,
+        "source": "Local GH2 card artwork; Pierce icons confirmed by user",
+        "consume": [
+          "Dark"
+        ],
+        "ratingsBasis": "Editorial playstyle fit, 0–10; not simulated damage"
+      },
+      "topLost": false,
+      "bottomLost": false,
+      "augment": true,
+      "augmentSide": "top",
+      "topPersistent": true,
+      "bottomPersistent": false,
+      "topElements": {
+        "generate": [],
+        "consume": [
+          "Dark"
+        ]
+      },
+      "bottomElements": {
+        "generate": [
+          "Dark"
+        ],
+        "consume": []
+      },
+      "simulationModel": {
+        "top": {
+          "effects": [
+            {
+              "kind": "augment",
+              "augment": "killer"
+            },
+            {
+              "kind": "attack",
+              "amount": 3,
+              "conditions": [
+                "Disarm"
+              ]
+            }
+          ],
+          "active": true
+        },
+        "bottom": {
+          "effects": [
+            {
+              "kind": "move",
+              "amount": 2
+            },
+            {
+              "kind": "loot",
+              "amount": 1
+            },
+            {
+              "kind": "status",
+              "condition": "Invisible",
+              "range": 0,
+              "self": true
+            },
+            {
+              "kind": "infuse",
+              "element": "Dark"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "source": {
+    "website": "https://www.gloomhavencards.com/gh2",
+    "repository": "https://github.com/cmlenius/gloomhaven-card-browser",
+    "dataset": "data/characters/gloomhaven-2nd-edition.json and data/character-abilities/gloomhaven-2nd-edition.json"
+  }
+}

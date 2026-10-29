@@ -1,0 +1,12 @@
+node_modules/
+.pnpm-store/
+dist/
+work/
+runtime/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+campaign-data/
+*.bak

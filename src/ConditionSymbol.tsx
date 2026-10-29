@@ -1,0 +1,2 @@
+const symbols=new Set(['Poison','Wound','Immobilize','Disarm','Stun','Muddle','Invisible','Strengthen','Curse','Bless','Shield','Retaliate','Push','Pull','Pierce']);
+export default function ConditionSymbol({name,text}:{name?:string;text?:string}){const match=name??[...symbols].find(symbol=>new RegExp('\\b'+symbol+'\\b').test(text??''));return match&&symbols.has(match)?<img className="condition-symbol" src={`/symbols/${match.toLowerCase()}.svg`} alt="" aria-hidden="true"/>:null;}
